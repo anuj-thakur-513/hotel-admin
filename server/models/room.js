@@ -5,6 +5,7 @@ const Schema = mongoose.Schema
 const roomSchema = new Schema({
   roomNumber: {
     type: Number,
+    unique: true,
     required: true,
   },
   roomType: {
