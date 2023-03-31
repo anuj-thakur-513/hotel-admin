@@ -2,6 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const cors = require('cors')
+const roomsRouter = require('./routes/rooms')
 const app = express()
 
 // enable environment varibale in nodejs
@@ -14,6 +15,9 @@ const { DB_URL, PORT } = process.env
 
 // parse application/json
 app.use(bodyParser.json())
+
+// Routes
+app.use('/api/v1/rooms', roomsRouter)
 
 // Connect to the database
 mongoose
